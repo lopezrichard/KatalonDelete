@@ -22,12 +22,17 @@ WebUI.openBrowser('')
 WebUI.navigateToUrl('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login')
 
 WebUI.setText(findTestObject('Object Repository/Page_OrangeHRM/input_Username_username'), 'Admin')
+WebUI.takeScreenshotAsCheckpoint('current_viewport')
+
 
 WebUI.setEncryptedText(findTestObject('Object Repository/Page_OrangeHRM/input_Password_password'), 'hUKwJTbofgPU9eVlw/CnDQ==')
 
 WebUI.click(findTestObject('Object Repository/Page_OrangeHRM/button_Login'))
 
+
 WebUI.verifyElementVisible(findTestObject('Object Repository/Page_OrangeHRM/h6_Dashboard'))
+
+WebUI.takeScreenshotAsCheckpoint('full_view', FailureHandling.CONTINUE_ON_FAILURE)
 
 WebUI.closeBrowser()
 
